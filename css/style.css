@@ -1,0 +1,203 @@
+:root {
+  --mainfont: 'Roboto', sans-serif;
+  --secundaryfont: 'Roboto Condensed', sans-serif;
+  --white: #FFFFFF;
+  --black: #202020;
+  --blue: #1B90FC;
+}
+
+/* ||GENERAL STYLE */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: var(--mainfont);
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+
+/* ||HERO STYLE */
+
+/* background: back-color || background-image || backgroun-repeat || background-position; */
+.hero {
+  background: var(--black) url(../img/background-loki-1920px.jpg) no-repeat center;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12.8rem), 0 100%);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  display: block;
+  inline-size: 50%;
+  block-size: 100%;
+  background: var(--black);
+  position: absolute;
+  z-index: 1;
+  clip-path: polygon(0 0, calc(100% - 15rem) 0, 100% 100%, 0 100%);
+}
+
+.wrapper {
+  box-sizing: border-box;
+  max-inline-size: 166.4rem;
+  padding-inline: 2.4rem;
+  margin: 0 auto;
+}
+
+.hero-content {
+  block-size: 108.0rem;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  inline-size: 42.8rem;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: var(--secundaryfont);
+  font-size: 4.2rem;
+  line-height: 5rem;
+  text-transform: uppercase;
+  margin-block: 2.4rem 0.8rem;
+  color: var(--white);
+}
+
+.hero p {
+  line-height: 2.4rem;
+  margin-block-end: 2.4rem;
+  color: var(--white);
+}
+
+.hero button {
+  background: var(--blue);
+  padding: 1.6rem 3.2rem;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 0;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+  border-radius: 5rem;
+}
+
+@media screen and (max-width: 1440px) {
+
+  .hero {
+    background: var(--black) url(../img/background-loki-1440px.jpg) no-repeat center;
+  }
+
+  .hero::before {
+    clip-path: polygon(0 0, calc(100% - 11.3rem) 0, 100% 100%, 0 100%);
+  }
+
+  .wrapper {
+    max-inline-size: 127.4rem;
+  }
+
+  .hero-content {
+    block-size: 102.4rem;
+  }
+}
+
+@media screen and (max-width:1366px) {
+  .hero {
+    background: url(../img/background-loki-1366px.jpg) no-repeat center;
+  }
+
+  .wrapper {
+    max-inline-size: 120rem;
+  }
+
+  .hero-content {
+    block-size: 76.8rem;
+  }
+}
+
+@media screen and (max-width:1160px) {
+
+  .hero {
+    background: var(--black);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 0 100%);
+    position: relative;
+    block-size: 100vh;
+  }
+
+  .hero::before {
+    content: '';
+    display: block;
+    block-size: 55%;
+    inline-size: 100%;
+    background: url(../img/background-loki-768px.jpg) no-repeat center top/cover;
+    position: absolute;
+    z-index: 0;
+    clip-path: none;
+  }
+
+  .wrapper {
+    box-sizing: content-box;
+    max-inline-size: calc(100% - 12.8rem);
+    padding-inline: 0;
+    margin: 0 auto;
+    block-size: 100%;
+  }
+
+  .hero-content {
+    block-size: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .card {
+    inline-size: 100%;
+    position: relative;
+    inset-block-start: 57%;
+  }
+
+  .hero button {
+    inline-size: 100%;
+  }
+}
+
+@media screen and (max-width: 664px) {
+  img {
+    block-size: 3.2rem;
+    inline-size: 7.6rem;
+  }
+
+  .wrapper {
+    max-inline-size: calc(100% - 4.8rem);
+  }
+
+  .hero::before {
+    block-size: 50%;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.4rem;
+  }
+
+  .hero button {
+    padding: 1.6rem 0;
+  }
+
+  .card {
+    inset-block-start: 52%;
+  }
+
+}
